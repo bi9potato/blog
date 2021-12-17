@@ -33,7 +33,7 @@
 由于流程过多，仅展示登录、管理、文章发表、图片上传5个流程。
 
 ## 3.1.登录
-![](https://github.com/bi9potato/blog/tree/main/ScreenShoot/登录.png)
+![img1](https://github.com/bi9potato/blog/tree/main/ScreenShoot/登录.png)
 
 
 
