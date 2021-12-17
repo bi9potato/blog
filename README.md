@@ -33,12 +33,12 @@
 由于流程过多，仅展示登录、管理、文章发表、图片上传5个流程。
 
 ## 3.1.登录
-![](https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png){:height="36px" width="36px"}.
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
 
 
 
 ## 3.2.管理
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="300" height="450" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
 
 ## 3.3.文章发表
 
