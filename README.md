@@ -35,32 +35,28 @@
 ## 3.1.登录
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
 
-
-
 ## 3.2.管理
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
 
 ## 3.3.文章发表
-
-
-
-
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A8.png?raw=true" width="400" height="200" />
 
 ## 3.4.文章发表
-
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A82.png?raw=true" width="400" height="200" />
 
 ## 3.5.图片上传
-
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png?raw=true" width="400" height="200" />
 
 # 4.程序及程序功能段功能分析
 我在组内负责Controller层。Controller层包括admin（管理员控制层）和home（主页控制层）。其中，admin包括哟管理员、后端文章、文章目录、评论、后台链接显示、后台菜单、公告、基本信息、页面、后台标签、用户、上传文件控制层。home包括用户文章控制、文章查询控制、评论控制、用户主界面控制、侧边栏控制、公告显示、页面详情控制、标签控制。
 
 
 控制层总体流程：
-
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%8E%A7%E5%88%B6%E5%B1%82.png?raw=true" width="400" height="200" />
 
 ## 4.1.注册，登录以及跳转后台
 ### 4.1.1.注册
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%B3%A8%E5%86%8C.png?raw=true" width="400" height="200" />
 注册页面：因为我们使用了SpringMVC框架，这个框架有前端控制器，所以在发送一个请求跳转到页面的时候，都是返回字符串（你可以看到下面页面显示URL的时候，并没有后面的JSP）。
   //注册页面显示
     @RequestMapping("/register")
@@ -116,6 +112,7 @@
 
 
 ### 4.1.2.登录
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95%E5%89%8D%E7%AB%AF.png?raw=true" width="400" height="200" />
     //登录页面显示
     @RequestMapping("/login")
     public String loginPage()
@@ -175,6 +172,7 @@
 因为登录的用户的权限可能不同，所以跳转的页面也不同，这个判断就放在了登录验证的map中（不同权限的code不同），code为1的返回给Ajax时，会打开管理员后台页面，code为2时，会打开一般用户后台页面。
 
 ### 4.1.3.跳转后台
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E8%B7%B3%E8%BD%AC.png?raw=true" width="400" height="200" />
 我们可以在第二节的JSP页面的Ajax部分，发现登录成功后，会根据code发送不同的请求，这两个请求会进行不同的跳转。
     @RequestMapping("/admin")
     //转到管理员后台主页
@@ -249,7 +247,7 @@ public class AdminArticleController {
 }
 4.2.2.删除文章
 我们可以看到这个点击删除按钮后，会以Ajax的形式传递文章ID，然后在这个ajax中发送删除请求。
- 
+
 //删除文章
 function deleteArticle(id) {
     if(confirmDelete()==true){
@@ -275,7 +273,8 @@ function deleteArticle(id) {
 文章列表显示：（第一篇文章属于另一个用户）
 
 点击删除按钮：
-
+  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="400" height="200" />
+  
 ## 4.4.分类管理
 ### 4.4.1.显示分类列表
 和文章的处理一样，都是所有分类裂变，使用分页插件进行显示。逻辑基本一样，不需要追溯到Mapper层。
