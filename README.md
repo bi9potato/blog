@@ -58,7 +58,7 @@
 ### 4.1.1.注册
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%B3%A8%E5%86%8C.png?raw=true" width="400" height="500" />
 注册页面：因为我们使用了SpringMVC框架，这个框架有前端控制器，所以在发送一个请求跳转到页面的时候，都是返回字符串（你可以看到下面页面显示URL的时候，并没有后面的JSP）。
-```java
+```java  
   //注册页面显示
     @RequestMapping("/register")
     public String registerPage(){
@@ -66,7 +66,7 @@
 }
 ```
 注册验证：  
-```java
+```java  
  //注册验证
     @RequestMapping(value = "/registerVerify",method = RequestMethod.POST)
     @ResponseBody
