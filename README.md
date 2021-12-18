@@ -33,19 +33,19 @@
 由于流程过多，仅展示登录、管理、文章发表、图片上传5个流程。
 
 ## 3.1.登录
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="500" height="300" />
 
 ## 3.2.管理
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="500" height="300" />
 
 ## 3.3.文章发表
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A8.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A8.png?raw=true" width="500" height="300" />
 
 ## 3.4.文章发表
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A82.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A82.png?raw=true" width="500" height="300" />
 
 ## 3.5.图片上传
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png?raw=true" width="500" height="300" />
 
 # 4.程序及程序功能段功能分析
 我在组内负责Controller层。Controller层包括admin（管理员控制层）和home（主页控制层）。其中，admin包括哟管理员、后端文章、文章目录、评论、后台链接显示、后台菜单、公告、基本信息、页面、后台标签、用户、上传文件控制层。home包括用户文章控制、文章查询控制、评论控制、用户主界面控制、侧边栏控制、公告显示、页面详情控制、标签控制。
@@ -274,7 +274,8 @@ function deleteArticle(id) {
     }
 ## 4.3.页面显示
 文章列表显示：（第一篇文章属于另一个用户）
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="400" height="200" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="400" height="200" />  
+  
 点击删除按钮：
   <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="400" height="200" />
   
