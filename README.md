@@ -122,6 +122,7 @@
 
 ### 4.1.2.登录
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95%E5%89%8D%E7%AB%AF.png?raw=true" width="800" height="450" />
+
 ```java
     //登录页面显示
     @RequestMapping("/login")
@@ -130,7 +131,9 @@
         return "login";
 }
 ```
+
 登录验证：  
+
 ```java
  //登录验证
     @RequestMapping(value = "/loginVerify",method = RequestMethod.POST)
@@ -179,6 +182,7 @@
         return result;
 }
 ```
+
 >这个就是根据传递过来的username判断是否有这个用户，如果有的话，就登录成功。
 >因为登录的用户的权限可能不同，所以跳转的页面也不同，这个判断就放在了登录验证的map中（不同权限的code不同），code为1的返回给Ajax时，会打开管理员后台页面，code为2时，会打开一般用户后台页面。
 
