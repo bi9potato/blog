@@ -125,7 +125,7 @@
         return "login";
 }
 ```
-登录验证：
+登录验证：  
 ```java
  //登录验证
     @RequestMapping(value = "/loginVerify",method = RequestMethod.POST)
