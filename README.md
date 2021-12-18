@@ -64,7 +64,7 @@
     public String registerPage(){
         return "register";
 }
-```
+```  
 注册验证：  
 ```java
  //注册验证
@@ -107,7 +107,7 @@
         String result = new JSONObject(map).toString();
         return result;
 }
-```
+```  
 >首先从发送过来的request请求获得三个属性：用户名，密码和是否记住密码。然后通过UserService调用方法来判断这个用户名是否存在，这个用户名存在的话，就向map放入code和msg（表示错误信息）。如果没有这个用户名的话，就创建新用户，并为这个用户设置用户信息（用户名，密码，状态，权限，注册时间）。将这个用户注册到数据库中，将user放入Session中，将用户名和密码放入Cookie中，方便登录使用。最后将map中放入成功信息，并将map转换成JSONObject的字符串形式返回（看到上面的@ResponseBody,就是将返回结果直接放到Response Body中）。
 >这个注册成功后，会将成功信息返回到JSP页面，然后在Ajax部分，判断数据代码，如果成功的话，会跳转到登录页面，不成功的话，就会向下面一样显示注册失败的信息。
 注册的时候，只能使用用户名进行注册。但是登录的时候可以选择使用Email和用户名进行登录。
