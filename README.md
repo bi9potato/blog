@@ -274,7 +274,7 @@ function deleteArticle(id) {
     }
 ## 4.3.页面显示
 文章列表显示：（第一篇文章属于另一个用户）
-
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="400" height="200" />
 点击删除按钮：
   <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="400" height="200" />
   
@@ -333,6 +333,7 @@ public class AdminCategoryController {
 
 ### 4.4.3.页面显示
 分类列表显示（因为这个分类下有文章，所以没有删除按钮）
+  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA2.png?raw=true" width="400" height="200" />
 
 ## 4.5.标签管理
 ### 4.5.1.显示标签列表
