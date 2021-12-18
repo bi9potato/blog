@@ -175,7 +175,7 @@
 因为登录的用户的权限可能不同，所以跳转的页面也不同，这个判断就放在了登录验证的map中（不同权限的code不同），code为1的返回给Ajax时，会打开管理员后台页面，code为2时，会打开一般用户后台页面。
 
 ### 4.1.3.跳转后台
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E8%B7%B3%E8%BD%AC.png?raw=true" width="700" height="550" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E8%B7%B3%E8%BD%AC.png?raw=true" width="800" height="450" />
 我们可以在第二节的JSP页面的Ajax部分，发现登录成功后，会根据code发送不同的请求，这两个请求会进行不同的跳转。
     @RequestMapping("/admin")
     //转到管理员后台主页
@@ -274,10 +274,10 @@ function deleteArticle(id) {
     }
 ## 4.3.页面显示
 文章列表显示：（第一篇文章属于另一个用户）
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="550" height="300" />  
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="800" height="450" />  
   
 点击删除按钮：
-  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="550" height="300" />
+  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="800" height="450" />
   
 ## 4.4.分类管理
 ### 4.4.1.显示分类列表
@@ -334,7 +334,7 @@ public class AdminCategoryController {
 
 ### 4.4.3.页面显示
 分类列表显示（因为这个分类下有文章，所以没有删除按钮）
-  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA2.png?raw=true" width="550" height="770" />
+  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA2.png?raw=true" width="800" height="450" />
 
 ## 4.5.标签管理
 ### 4.5.1.显示标签列表
