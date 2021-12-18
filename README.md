@@ -115,7 +115,7 @@
 
 
 ### 4.1.2.登录
-<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95%E5%89%8D%E7%AB%AF.png?raw=true" width="700" height="550" />
+<img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95%E5%89%8D%E7%AB%AF.png?raw=true" width="800" height="450" />
     //登录页面显示
     @RequestMapping("/login")
     public String loginPage()
