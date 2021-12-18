@@ -306,7 +306,7 @@ function deleteArticle(id) {
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="800" height="450" />  
   
 点击删除按钮：
-  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="800" height="450" />
+  <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="400" height="225" />
   
 ## 4.4.分类管理
 ### 4.4.1.显示分类列表
