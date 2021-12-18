@@ -129,7 +129,7 @@
     public String loginPage()
     {
         return "login";
-}
+    }
 ```
 
 登录验证：  
@@ -188,6 +188,7 @@
 
 ### 4.1.3.跳转后台
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E8%B7%B3%E8%BD%AC.png?raw=true" width="800" height="450" />
+
 我们可以在第二节的JSP页面的Ajax部分，发现登录成功后，会根据code发送不同的请求，这两个请求会进行不同的跳转。
 ```java
     @RequestMapping("/admin")
@@ -214,6 +215,7 @@
 ## 4.2.文章操作
 ### 4.2.1.显示文章列表，带有分页功能
 在之前的功能划分中，管理员对文章只有显示所有人文章列表和删除文章两个功能。可以看到在点击全部文章链接时，会发送"/admin/article"请求。在这个请求映射的方法中，会获得文章列表(下面的方法也在这个类中）。
+
 ```java
 @Controller
 @RequestMapping("/admin/article")
@@ -245,7 +247,9 @@ public class AdminArticleController {
 ...
 }
 ```
+
 为了看到这个分页是如何进行的， 所以追踪到这个pageArticle的实现：
+
 ```java
    @Override
     public PageInfo<Article> pageArticle(Integer pageIndex,
@@ -265,8 +269,10 @@ public class AdminArticleController {
         return new PageInfo<>(articleList);
 }
 ```
+
 4.2.2.删除文章
 我们可以看到这个点击删除按钮后，会以Ajax的形式传递文章ID，然后在这个ajax中发送删除请求。
+
 ```java
 //删除文章
 function deleteArticle(id) {
@@ -280,11 +286,13 @@ function deleteArticle(id) {
             complete:function () {
                 window.location.reload();
             }
-        })
-    }
-}
+         })
+      }
+  }
 ```
+
 可以看到这个传递的时候会带有文章ID，Controller层的删除方法：
+
 ```java
     //删除文章
     @RequestMapping(value = "/delete/{id}")
@@ -292,6 +300,7 @@ function deleteArticle(id) {
         articleService.deleteArticle(id);
     }
 ```
+
 ## 4.3.页面显示
 文章列表显示：（第一篇文章属于另一个用户）
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="800" height="450" />  
@@ -302,6 +311,7 @@ function deleteArticle(id) {
 ## 4.4.分类管理
 ### 4.4.1.显示分类列表
 和文章的处理一样，都是所有分类裂变，使用分页插件进行显示。逻辑基本一样，不需要追溯到Mapper层。
+
 ```java
 @Controller
 @RequestMapping("/admin/category")
@@ -336,11 +346,11 @@ public class AdminCategoryController {
             categoryService.deleteCategory(id);
         }
         return "redirect:/admin/category";
- 
- 
-}
+  }
 ```
+
 追踪到删除的实现方法，就会发现删除这个分类的同时，会删除这个分类与文章的关联记录。
+
 ```java
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -354,8 +364,9 @@ public class AdminCategoryController {
             log.error("删除分类失败, id:{}, cause:{}", id, e);
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
-}
+  }
 ```
+
 ### 4.4.3.页面显示
 分类列表显示（因为这个分类下有文章，所以没有删除按钮）
   <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA2.png?raw=true" width="800" height="450" />
@@ -384,7 +395,9 @@ public class AdminTagController {
 ...
 }
 ```
+
 ## 4.5.2.删除标签
+
 ```java
  //删除标签
     @RequestMapping(value = "/delete/{id}")
@@ -395,9 +408,11 @@ public class AdminTagController {
             tagService.deleteTag(id);
         }
         return "redirect:/admin/tag";
-}
+  }
 ```
+
 追踪到删除的实现方法，可以发现在删除标签的同时会删除文章与标签的关联记录。
+
 ```java
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -410,10 +425,12 @@ public class AdminTagController {
             log.error("删除标签失败, id:{}, cause:{}", id, e);
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
-}
+    }
 ```
+
 ## 4.6.页面操作
 ### 4.6.1.显示所有页面列表
+
 ```java
 @Controller
 @RequestMapping("/admin/page")
@@ -435,8 +452,10 @@ public class PageController {
 ...
 }
 ```
+
 ### 4.6.2.添加页面
 发送insert请求，根据SpringMVC的DispatcherServlet转到添加的JSP页面。确认添加就会有添加提交的请求。
+
 ```java
   //后台添加页面显示
     @RequestMapping(value = "/insert")
@@ -461,9 +480,11 @@ public class PageController {
             pageService.insertPage(page);
         }
         return "redirect:/admin/page";
-}
+  }
 ```
+
 ### 4.6.3.删除
+
 ```java
   //删除
     @RequestMapping(value = "/delete/{id}")
@@ -471,10 +492,12 @@ public class PageController {
     {
         pageService.deletePage(id);
        return  "redirect:/admin/page";
-}
+    }
 ```
+
 ### 4.6.4.编辑
 首先会根据ID查询页面，将这个页面信息放在Model中，这个信息会显示在编辑页面。
+
 ```java
   //编辑页面
     @RequestMapping(value = "/edit/{id}")
@@ -498,10 +521,12 @@ public class PageController {
             pageService.updatePage(page);
         }
         return  "redirect:/admin/page";
-}
+    }
 ```
+
 ## 4.7.LinkController
 ### 4.7.1.显示链接列表
+
 ```java
 @Controller
 @RequestMapping("/admin/link")
@@ -518,10 +543,12 @@ public class LinkController {
         modelAndView.addObject("linkList",linkList);
         modelAndView.setViewName("Admin/Link/index");
         return modelAndView;
-}
+    }
 ```
+
 ### 4.7.2.添加链接
 因为添加页面还会显示链接列表，所以还需要查询所有链接放在Model中。
+
 ```java
 //添加链接页面显示
     @RequestMapping(value = "/insert")
@@ -542,10 +569,12 @@ public class LinkController {
         link.setLinkStatus(1);
         linkService.insertLink(link);
         return "redirect:/admin/link/insert";
-}
+    }
 ```
+
 ### 4.7.3.编辑链接
 因为是对一个链接进行修改，所以会提前查询这个链接信息放在Model中，显示在编辑页面。
+
 ```java
  //编辑链接
     @RequestMapping(value = "/edit/{id}")
@@ -568,9 +597,11 @@ public class LinkController {
         link.setLinkUpdateTime(new Date());
         linkService.updateLink(link);
         return "redirect:/admin/link";
-}
+    }
 ```
+
 ### 4.7.4.删除链接
+
 ```java
  //删除链接
     @RequestMapping(value = "/delete/{id}")
@@ -579,6 +610,7 @@ public class LinkController {
         return "redirect:/admin/link";
 }
 ```
+
 # 5.总结
 >作为一个完整的博客系统，本系统的主要结构有：阅读博客,后台管理,系统管理。其中,后台包括文章管理,评论管理,链接管理,图片管理,密码管理。系统管理包括帐户管理和密码管理。从而使得博客用户能够更好地展现自我和互相交流。
 >系统的开发以及论文的研究由于时间的关系，有一些地方做的还不是很完美。对设计模式的研究时间不长，所以在写代码的时候还没有做到真正的得心应手，是在查询一些帮助文档的情况下才完成的。
