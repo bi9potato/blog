@@ -1,78 +1,80 @@
 # blog
-# 1.项目实践的目的与要求
-## 1.1.目的
->随着Blog人数的增加，Blog作为一种新的生活方式、新的工作方式和新的学习方式已经被越来越多的人所接受，并且在改变传统的网络和社会结构。它使交流和沟通更有明确的选择和方向性；单一的思想和群体的智慧结合变得更加有效；个人出版变成人人都可以实现的梦想。Blog正在影响和改变着我们的生活。
->本系统采用SpringMVC模式设计实现了一个博客系统。MVC模式极大地提高了系统的灵活性、复用性、开发效率、适应性和可维护性，充分发挥了JSP、Servlet等J2EE组件的特点。使更多的人们通过文字、图片、声音、视频、无线等，尽情展示自我、分享感受、参与交流，美好你我生活。人人都可以博客，人人都需要博客。
+# 1.Purpose and Requirements
+## 1.1.Purpose
+>With the increasing number of bloggers, blogs are becoming more widely accepted as a new lifestyle, work style, and learning tool, and are changing traditional network and social structures. They provide clearer options and directions for communication and collaboration, combine individual ideas with group wisdom more effectively, and make personal publishing a dream that can be achieved by everyone. Blogs are influencing and changing our lives.
+>This system uses the SpringMVC pattern to design and implement a blog system. The MVC pattern greatly improves the system's flexibility, reusability, development efficiency, adaptability, and maintainability, fully leveraging the characteristics of J2EE components such as JSP and Servlet. It enables more people to showcase themselves, share their feelings, and participate in communication through text, images, sound, video, wireless, etc., creating a better life for all. Everyone can blog, and everyone needs a blog.
 
-## 1.2.要求
->项目的实践需使用spring+springMVC技术进行开发
->管理员通过前台页面进入后台管理模块后，可对注册的博客用户进行维护，包括对注册用户的添加、查找、修改和删除。
->管理员进入登录后，可对帐户进行管理，包括添加管理员帐户、修改管理员帐户、删除管理员帐户和对帐户进行权限设置。
->博客用户通过前台登录后，可对自己的博客空间进行管理，包括发布自己的网络日志、收藏个人图片、和相关人员进行交流和沟通以及删除访问者发表的评论等。
->在具体设计实现该博客网站时，主要考虑了主流博客网站的几个主要功能:
->>(1)博客的注册、登录验证功能  
->>(2)网络用户通过关键字搜索博文功能  
->>(3)最热门博客页面推荐浏览  
->>(4)文章详细内容及相关评论显示  
->>(5)博客页面访问量统计  
->>(6)博客个人文章管理维护功能  
->>(7)博客个人文章分类管理维护功能  
->>(8)博客个人友情链接维护功能  
->>(9)博客个人基本信息管理维护功能  
->>(10)博客图片上传及个人相册管理  
->>(11)网络用户写留言，博主查看留言。
+## 1.2.Requirements
+>The project practice needs to be developed using the spring+springMVC technology.
+The administrator can maintain registered blog users through the front-end page after entering the background management module, including adding, finding, modifying, and deleting registered users.
+After logging in, the administrator can manage the account, including adding administrator accounts, modifying administrator accounts, deleting administrator accounts, and setting account permissions.
+Blog users can manage their own blog space after logging in to the front end, including publishing their own online diary, collecting personal pictures, communicating with relevant personnel, and deleting comments posted by visitors.
+In the specific design and implementation of the blog website, several main functions of mainstream blog websites were mainly considered:
+>>(1) Blog registration and login verification function
+>>(2) Keyword search function for blog posts by network users
+>>(3) Recommendation of the most popular blog pages for browsing
+>>(4) Display of detailed article content and related comments
+>>(5) Statistics of blog page views
+>>(6) Management and maintenance functions of personal blog articles
+>>(7) Management and maintenance functions of personal blog article categories
+>>(8) Management and maintenance functions of personal blog friendship links
+>>(9) Management and maintenance functions of personal basic information in blogs
+>>(10) Uploading pictures to the blog and managing personal albums
+>>(11) Network users can leave messages and blog owners can view them.
 
-# 2.总体设计方案
->(1)Blog的搭建需要两个基本的数据类型：用户类型与文章类型  
->(2)对Blog的管理需要对用户进行区分为管理员与普通用户  
->(3)Blog功能的实现需要多个前端页面配合，对每个功能编写相关的页面  
->(4)Blog的各个模块的解耦需要运用Spring框架进行项目开发，并配置相关配置  
->(5)项目开发的合作需要对各个功能接口，对pojo的标准进行确定  
+# 2.Overall Design Plan
+>(1) Building a blog requires two basic data types: user type and article type
+>(2) Blog management requires distinguishing between administrators and ordinary users
+>(3) Implementing blog functionality requires multiple front-end pages to work together and writing relevant pages for each function
+>(4) Decoupling of each module of the blog requires the use of the Spring framework for project development and configuration of relevant settings
+>(5) Collaboration in project development requires determination of interfaces for each function and standardization of POJOs.
 
-# 3.软件流程图
-由于流程过多，仅展示登录、管理、文章发表、图片上传5个流程。
+# 3.Software Flowchart
+Due to the large number of processes involved, only the login, management, article publishing, and image uploading processes are displayed.
 
-## 3.1.登录
+## 3.1.Login
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="500" height="300" />
 
-## 3.2.管理
+## 3.2.Management
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95.png?raw=true" width="500" height="300" />
 
-## 3.3.文章发表
+## 3.3.Article Publishing
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A8.png?raw=true" width="500" height="300" />
 
-## 3.4.文章发表
+## 3.4.Article Publishing
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%96%87%E7%AB%A0%E5%8F%91%E8%A1%A82.png?raw=true" width="500" height="300" />
 
-## 3.5.图片上传
+## 3.5.Image Uploading
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png?raw=true" width="500" height="300" />
 
-# 4.程序及程序功能段功能分析
-我在组内负责Controller层。Controller层包括admin（管理员控制层）和home（主页控制层）。其中，admin包括哟管理员、后端文章、文章目录、评论、后台链接显示、后台菜单、公告、基本信息、页面、后台标签、用户、上传文件控制层。home包括用户文章控制、文章查询控制、评论控制、用户主界面控制、侧边栏控制、公告显示、页面详情控制、标签控制。
+# 4.Program and Program Segment Function Analysis
+I am responsible for the Controller layer in the team. The Controller layer includes admin (administrator control layer) and home (homepage control layer). Among them, admin includes administrator, backend article, article directory, comment, backend link display, backend menu, announcement, basic information, page, backend tag, user, and file upload control layers. Home includes user article control, article query control, comment control, user interface control, sidebar control, announcement display, page details control, and tag control.
 
 
-控制层总体流程：
+Overall flowchart of the control layer:
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%8E%A7%E5%88%B6%E5%B1%82.png?raw=true" width="400" height="200" />
 
-## 4.1.注册，登录以及跳转后台
-### 4.1.1.注册
+## 4.1.Registration, Login, and Backend Jump
+### 4.1.1.Registration
 
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E6%B3%A8%E5%86%8C.png?raw=true" width="400" height="500" />  
 
-注册页面：  
-因为我们使用了SpringMVC框架，这个框架有前端控制器，所以在发送一个请求跳转到页面的时候，都是返回字符串（你可以看到下面页面显示URL的时候，并没有后面的JSP）。  
+Registration Page:  
+
+As we use the SpringMVC framework, which has a front controller, when sending a request to jump to a page, it always returns a string (as you can see from the URL of the displayed page, there is no JSP at the end). 
 
 ```Java
-  //注册页面显示
+  //Display Registration Page
     @RequestMapping("/register")
     public String registerPage(){
         return "register";
     }
 ```  
 
-注册验证：  
+Registration Verification:
+
 ```java
- //注册验证
+ // Registration Verification
     @RequestMapping(value = "/registerVerify",method = RequestMethod.POST)
     @ResponseBody
     public String registerVerify(HttpServletRequest request,HttpServletResponse response){
@@ -113,18 +115,18 @@
         return result;
 }
 ```  
->首先从发送过来的request请求获得三个属性：用户名，密码和是否记住密码。然后通过UserService调用方法来判断这个用户名是否存在，这个用户名存在的话，就向map放入code和msg（表示错误信息）。如果没有这个用户名的话，就创建新用户，并为这个用户设置用户信息（用户名，密码，状态，权限，注册时间）。将这个用户注册到数据库中，将user放入Session中，将用户名和密码放入Cookie中，方便登录使用。最后将map中放入成功信息，并将map转换成JSONObject的字符串形式返回（看到上面的@ResponseBody,就是将返回结果直接放到Response Body中）。
->这个注册成功后，会将成功信息返回到JSP页面，然后在Ajax部分，判断数据代码，如果成功的话，会跳转到登录页面，不成功的话，就会向下面一样显示注册失败的信息。
-注册的时候，只能使用用户名进行注册。但是登录的时候可以选择使用Email和用户名进行登录。
+>Firstly, get three attributes from the request: username, password, and whether to remember the password. Then, use UserService to call the method to determine whether this username exists. If this username exists, put the code and msg (representing error message) into the map. If there is no such username, create a new user and set user information (username, password, status, access, and registration time) for this user. Register this user to the database, put the user in the Session, put the username and password in the Cookie for easy login use. Finally, put success information into the map and convert the map into a JSONObject string format to return (as you can see from @ResponseBody, the returned result is directly put into the Response Body).
+
+>During registration, only the username can be used for registration. However, during login, you can choose to log in using either an email or username.
 
 
 
 
-### 4.1.2.登录
+### 4.1.2.Login
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%99%BB%E5%BD%95%E5%89%8D%E7%AB%AF.png?raw=true" width="800" height="450" />
 
 ```java
-    //登录页面显示
+    //Login Page Display:
     @RequestMapping("/login")
     public String loginPage()
     {
@@ -132,10 +134,10 @@
     }
 ```
 
-登录验证：  
+Login Verification: 
 
 ```java
- //登录验证
+ //Login Verification
     @RequestMapping(value = "/loginVerify",method = RequestMethod.POST)
     @ResponseBody
     public String loginVerify(HttpServletRequest request, HttpServletResponse response)  {
@@ -183,13 +185,14 @@
 }
 ```
 
->这个就是根据传递过来的username判断是否有这个用户，如果有的话，就登录成功。
->因为登录的用户的权限可能不同，所以跳转的页面也不同，这个判断就放在了登录验证的map中（不同权限的code不同），code为1的返回给Ajax时，会打开管理员后台页面，code为2时，会打开一般用户后台页面。
+>This method checks if the user exists based on the username passed in. If the user exists, the login is successful.
 
-### 4.1.3.跳转后台
+>Since users may have different permissions, the page to be redirected to after login will also be different. This check is included in the map returned by the login verification (with different codes for different permissions). When the code is 1, the admin backend page will be opened; when the code is 2, the regular user backend page will be opened.
+
+### 4.1.3.Redirect to Backend
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E8%B7%B3%E8%BD%AC.png?raw=true" width="800" height="450" />
 
-我们可以在第二节的JSP页面的Ajax部分，发现登录成功后，会根据code发送不同的请求，这两个请求会进行不同的跳转。
+In the AJAX section of the JSP page mentioned in section 2, we can see that after a successful login, different requests will be sent based on the code, which will result in different redirects.
 ```java
     @RequestMapping("/admin")
     //转到管理员后台主页
@@ -209,12 +212,12 @@
         return "User/Article/insert";
     }
 ```
->因为两个权限不同，页面显示也不会相同。管理员后台主页面会显示最新的文章和最新的评论（放到Model中传递）。一般用户的主页面就是写文章。
+>Since the two types of users have different permissions, their respective backend pages will also display differently. The main page of the admin backend will display the latest articles and comments (passed through the Model). The main page of the regular user backend will be for writing articles.
 
 
-## 4.2.文章操作
-### 4.2.1.显示文章列表，带有分页功能
-在之前的功能划分中，管理员对文章只有显示所有人文章列表和删除文章两个功能。可以看到在点击全部文章链接时，会发送"/admin/article"请求。在这个请求映射的方法中，会获得文章列表(下面的方法也在这个类中）。
+## 4.2.Article Operations
+### 4.2.1.Displaying Article List with Pagination
+As per the previous functional requirements, administrators only have two functions for managing articles, i.e., displaying all articles and deleting articles. When clicking on the link for all articles, the "/admin/article" request is sent. In the method mapped to this request, the article list is obtained (the following method is also included in this class).
 
 ```java
 @Controller
@@ -248,7 +251,7 @@ public class AdminArticleController {
 }
 ```
 
-为了看到这个分页是如何进行的， 所以追踪到这个pageArticle的实现：
+To see how pagination works, let's look at the implementation of the "pageArticle" method:
 
 ```java
    @Override
@@ -270,8 +273,9 @@ public class AdminArticleController {
 }
 ```
 
-4.2.2.删除文章
-我们可以看到这个点击删除按钮后，会以Ajax的形式传递文章ID，然后在这个ajax中发送删除请求。
+### 4.2.2.Deleting Articles  
+
+When the delete button is clicked, the article ID is passed as an AJAX request, which is then used to send the delete request in this AJAX.
 
 ```java
 //删除文章
@@ -291,7 +295,7 @@ function deleteArticle(id) {
   }
 ```
 
-可以看到这个传递的时候会带有文章ID，Controller层的删除方法：
+As we can see, the article ID is passed during transmission, and the delete method in the controller layer looks like this:
 
 ```java
     //删除文章
@@ -301,16 +305,16 @@ function deleteArticle(id) {
     }
 ```
 
-## 4.3.页面显示
-文章列表显示：（第一篇文章属于另一个用户）
+## 4.3.Page Display
+Displaying Article List: (The first article belongs to another user)
 <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA.png?raw=true" width="800" height="450" />  
   
-点击删除按钮：
+Clicking the delete button:
   <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4.png?raw=true" width="400" height="225" />
   
-## 4.4.分类管理
-### 4.4.1.显示分类列表
-和文章的处理一样，都是所有分类裂变，使用分页插件进行显示。逻辑基本一样，不需要追溯到Mapper层。
+## 4.4.Category Management
+### 4.4.1.Displaying Category List
+Like article management, all categories are displayed and a pagination plugin is used for display. The logic is similar, so we do not need to trace it back to the mapper layer.
 
 ```java
 @Controller
@@ -320,7 +324,7 @@ public class AdminCategoryController {
     private CategoryService categoryService;
     @Autowired
     private ArticleService articleService; 
-    //分类列表显示（管理员只有列表显示和删除)
+    // Displaying category list (Administrators only have the functionality to display the list and delete it)
     @RequestMapping(value = "")
     public ModelAndView categoryList(){
         ModelAndView modelAndView=new ModelAndView();
@@ -331,15 +335,16 @@ public class AdminCategoryController {
     }
 ...
 }
+
 ```
-### 4.4.2.删除分类
-这个删除的请求直接是链接发送请求。
+### 4.4.2.Deleting a Category
+This delete request is sent directly via a link.
 ```java
- //删除分类
+ // Delete category
     @RequestMapping(value = "/delete/{id}")
     public String deleteCategory(@PathVariable("id")Integer id)
     {
-        //明确是不可以删除有文章的分类
+        // Categories with articles cannot be deleted
         int count=articleService.countArticleByCategoryId(id);
         if(count==0)
         {
@@ -349,30 +354,31 @@ public class AdminCategoryController {
   }
 ```
 
-追踪到删除的实现方法，就会发现删除这个分类的同时，会删除这个分类与文章的关联记录。
+On tracing back to the implementation method of the delete function, we can see that when a category is deleted, the associated records of the category with articles are also deleted.
 
 ```java
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void deleteCategory(Integer id) {
         try{
-            //因为文章和分类有关，所以在分类中删除，也要在文章和分类关联的表里删除
+            // As articles and categories are related, deleting in the category requires deleting the associated records in the article-category relationship table
             categoryMapper.deleteCategory(id);
             articleCategoryRefMapper.deleteByCategoryId(id);
         }catch (Exception e){
             e.printStackTrace();
-            log.error("删除分类失败, id:{}, cause:{}", id, e);
+            log.error("Failed to delete category, id:{}, cause:{}", id, e);
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
   }
+
 ```
 
-### 4.4.3.页面显示
-分类列表显示（因为这个分类下有文章，所以没有删除按钮）
+### 4.4.3.Page display
+Category list display (delete button not available because there are articles under this category)
   <img src="https://github.com/bi9potato/blog/blob/main/ScreenShoot/%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA2.png?raw=true" width="800" height="450" />
 
-## 4.5.标签管理
-### 4.5.1.显示标签列表
+## 4.5.Tag Management
+### 4.5.1.Display Tag List
 ```java
 @Controller
 @RequestMapping("/admin/tag")
@@ -383,7 +389,7 @@ public class AdminTagController {
     @Autowired
     private TagService tagService;
  
-    //后台列表显示
+    // Display tag list in admin panel
     @RequestMapping(value = "")
     public ModelAndView index(){
         ModelAndView modelAndView =new ModelAndView();
@@ -394,12 +400,13 @@ public class AdminTagController {
     }
 ...
 }
+
 ```
 
-## 4.5.2.删除标签
+## 4.5.2.Deleting Tags
 
 ```java
- //删除标签
+  //Delete a tag
     @RequestMapping(value = "/delete/{id}")
     public String deleteTag(@PathVariable("id")Integer id){
         Integer count=articleService.countArticleByTagId(id);
@@ -409,9 +416,10 @@ public class AdminTagController {
         }
         return "redirect:/admin/tag";
   }
+
 ```
 
-追踪到删除的实现方法，可以发现在删除标签的同时会删除文章与标签的关联记录。
+By tracking the implementation method of the delete operation, it can be seen that when deleting a tag, the associated records between articles and tags will be deleted at the same time.
 
 ```java
     @Override
@@ -422,14 +430,15 @@ public class AdminTagController {
             articleTagRefMapper.deleteByTagId(id);
         } catch (Exception e) {
             e.printStackTrace();
-            log.error("删除标签失败, id:{}, cause:{}", id, e);
+            log.error("Failed to delete tag, id:{}, cause:{}", id, e);
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
     }
+
 ```
 
-## 4.6.页面操作
-### 4.6.1.显示所有页面列表
+## 4.6.Page Operations
+### 4.6.1.Display all page lists
 
 ```java
 @Controller
@@ -439,7 +448,7 @@ public class PageController {
     @Autowired
     private PageService pageService;
  
-    //后台列表显示
+    // Display all page lists in the admin panel
     @RequestMapping(value = "")
     public ModelAndView index()
     {
@@ -451,81 +460,85 @@ public class PageController {
     }
 ...
 }
+
 ```
 
-### 4.6.2.添加页面
-发送insert请求，根据SpringMVC的DispatcherServlet转到添加的JSP页面。确认添加就会有添加提交的请求。
+### 4.6.2.Add page
+Send the insert request, according to the SpringMVC's DispatcherServlet, to navigate to the added JSP page. There will be an add submission request when confirmed.
 
 ```java
-  //后台添加页面显示
-    @RequestMapping(value = "/insert")
-    public ModelAndView insertPageView()
+// Show the page for adding a page in the admin panel
+@RequestMapping(value = "/insert")
+public ModelAndView insertPageView()
+{
+    ModelAndView modelAndView=new ModelAndView();
+    modelAndView.setViewName("Admin/Page/insert");
+    return modelAndView;
+}
+
+// Submit the page for adding
+@RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
+public String insertPageSubmit(Page page)
+{
+    // Check if the page alias already exists
+    Page checkPage=pageService.getPageByKey(null,page.getPageKey());
+    if(checkPage==null)
     {
-        ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("Admin/Page/insert");
-        return modelAndView;
+        page.setPageCreateTime(new Date());
+        page.setPageUpdateTime(new Date());
+        page.setPageStatus(PageStatus.NORMAL.getValue());
+        pageService.insertPage(page);
     }
- 
-    //提交添加
-    @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
-    public String insertPageSubmit(Page page)
-    {
-        //判断页面别名存在
-        Page checkPage=pageService.getPageByKey(null,page.getPageKey());
-        if(checkPage==null)
-        {
-            page.setPageCreateTime(new Date());
-            page.setPageUpdateTime(new Date());
-            page.setPageStatus(PageStatus.NORMAL.getValue());
-            pageService.insertPage(page);
-        }
-        return "redirect:/admin/page";
-  }
+    return "redirect:/admin/page";
+}
+
 ```
 
-### 4.6.3.删除
+### 4.6.3.Delete
 
 ```java
-  //删除
-    @RequestMapping(value = "/delete/{id}")
-    public String deletePage(@PathVariable("id")Integer id)
-    {
-        pageService.deletePage(id);
-       return  "redirect:/admin/page";
-    }
+// Delete
+@RequestMapping(value = "/delete/{id}")
+public String deletePage(@PathVariable("id")Integer id)
+{
+    pageService.deletePage(id);
+   return  "redirect:/admin/page";
+}
+
 ```
 
-### 4.6.4.编辑
-首先会根据ID查询页面，将这个页面信息放在Model中，这个信息会显示在编辑页面。
+### 4.6.4.Edit
+First, the page will be queried based on the ID, and this page information will be placed in the Model, which will be displayed on the edit page.
 
 ```java
-  //编辑页面
-    @RequestMapping(value = "/edit/{id}")
-    public ModelAndView editView(@PathVariable("id")Integer id)
-    {
-        ModelAndView modelAndView = new ModelAndView();
- 
-        Page page = pageService.getPageById(id);
-        modelAndView.addObject("page", page);
-        modelAndView.setViewName("Admin/Page/edit");
-        return modelAndView;
+// Edit page
+@RequestMapping(value = "/edit/{id}")
+public ModelAndView editView(@PathVariable("id")Integer id)
+{
+    ModelAndView modelAndView = new ModelAndView();
+
+    Page page = pageService.getPageById(id);
+    modelAndView.addObject("page", page);
+    modelAndView.setViewName("Admin/Page/edit");
+    return modelAndView;
+}
+
+// Submit the edited page
+@RequestMapping(value = "editSubmit",method = RequestMethod.POST)
+public String editPageSubmit(Page page)
+{
+    Page checkPage=pageService.getPageByKey(null,page.getPageKey());
+    if(Objects.equals(checkPage.getPageId(),page.getPageId())){
+        page.setPageUpdateTime(new Date());
+        pageService.updatePage(page);
     }
- 
-    //编辑页面提交
-    @RequestMapping(value = "editSubmit",method = RequestMethod.POST)
-    public String editPageSubmit(Page page)
-    {
-        Page checkPage=pageService.getPageByKey(null,page.getPageKey());
-        if(Objects.equals(checkPage.getPageId(),page.getPageId())){
-            page.setPageUpdateTime(new Date());
-            pageService.updatePage(page);
-        }
-        return  "redirect:/admin/page";
-    }
+    return  "redirect:/admin/page";
+}
+
 ```
 
 ## 4.7.LinkController
-### 4.7.1.显示链接列表
+### 4.7.1.Displaying the Link List
 
 ```java
 @Controller
@@ -535,84 +548,87 @@ public class LinkController {
     @Autowired
     private LinkService linkService;
  
-    //后台链接列表显示
+    // Display the link list in the backend
     @RequestMapping(value = "")
     public ModelAndView linkList(){
-        ModelAndView modelAndView=new ModelAndView();
-        List<Link> linkList=linkService.listLink(null);
-        modelAndView.addObject("linkList",linkList);
+        ModelAndView modelAndView = new ModelAndView();
+        List<Link> linkList = linkService.listLink(null);
+        modelAndView.addObject("linkList", linkList);
         modelAndView.setViewName("Admin/Link/index");
         return modelAndView;
     }
+
 ```
 
-### 4.7.2.添加链接
-因为添加页面还会显示链接列表，所以还需要查询所有链接放在Model中。
+### 4.7.2.Adding a Link
+Because the add page also displays the link list, all links need to be queried and added to the model.
 
 ```java
-//添加链接页面显示
+// Display add link page
     @RequestMapping(value = "/insert")
-    public  ModelAndView insertLinkView(){
-        ModelAndView modelAndView=new ModelAndView();
-        List<Link> linkList=linkService.listLink(null);
-        modelAndView.addObject("linkList",linkList);
+    public ModelAndView insertLinkView() {
+        ModelAndView modelAndView = new ModelAndView();
+        List<Link> linkList = linkService.listLink(null);
+        modelAndView.addObject("linkList", linkList);
         modelAndView.setViewName("Admin/Link/insert");
         return modelAndView;
     }
  
-    //添加链接提交
-    @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
-    public String insertLinkSubmit(Link link)
-    {
+    // Submitting an added link
+    @RequestMapping(value = "/insertSubmit", method = RequestMethod.POST)
+    public String insertLinkSubmit(Link link) {
         link.setLinkCreateTime(new Date());
         link.setLinkUpdateTime(new Date());
         link.setLinkStatus(1);
         linkService.insertLink(link);
         return "redirect:/admin/link/insert";
     }
+
 ```
 
-### 4.7.3.编辑链接
-因为是对一个链接进行修改，所以会提前查询这个链接信息放在Model中，显示在编辑页面。
+### 4.7.3.Editing a Link
+Because it is modifying a link, the link information needs to be queried in advance and added to the model to be displayed on the editing page.
 
 ```java
- //编辑链接
+ // Edit link
     @RequestMapping(value = "/edit/{id}")
-    public ModelAndView editLinkView(@PathVariable("id")Integer id){
-        ModelAndView modelAndView=new ModelAndView();
-        Link linkCustom=linkService.getLinkById(id);
-        modelAndView.addObject("linkCustom",linkCustom);
+    public ModelAndView editLinkView(@PathVariable("id")Integer id) {
+        ModelAndView modelAndView = new ModelAndView();
+        Link linkCustom = linkService.getLinkById(id);
+        modelAndView.addObject("linkCustom", linkCustom);
  
-        List<Link> linkList=linkService.listLink(null);
-        modelAndView.addObject("linkList",linkList);
+        List<Link> linkList = linkService.listLink(null);
+        modelAndView.addObject("linkList", linkList);
  
         modelAndView.setViewName("Admin/Link/edit");
         return modelAndView;
     }
  
-    //编辑链接提交
-    @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
-    public String editSubmit(Link link)
-    {
+    // Submitting the edited link
+    @RequestMapping(value = "/editSubmit", method = RequestMethod.POST)
+    public String editSubmit(Link link) {
         link.setLinkUpdateTime(new Date());
         linkService.updateLink(link);
         return "redirect:/admin/link";
     }
+
 ```
 
-### 4.7.4.删除链接
+### 4.7.4.Deleting a Link
 
 ```java
- //删除链接
+ // Delete link
     @RequestMapping(value = "/delete/{id}")
-    public String deleteLink(@PathVariable("id")Integer id){
+    public String deleteLink(@PathVariable("id")Integer id) {
         linkService.deleteLink(id);
         return "redirect:/admin/link";
-}
+    }
+
 ```
 
-# 5.总结
->作为一个完整的博客系统，本系统的主要结构有：阅读博客,后台管理,系统管理。其中,后台包括文章管理,评论管理,链接管理,图片管理,密码管理。系统管理包括帐户管理和密码管理。从而使得博客用户能够更好地展现自我和互相交流。
->系统的开发以及论文的研究由于时间的关系，有一些地方做的还不是很完美。对设计模式的研究时间不长，所以在写代码的时候还没有做到真正的得心应手，是在查询一些帮助文档的情况下才完成的。
-在详细设计和编码中，运用最基本的开发技术，代码简单易懂，系统里间跳转比较清晰。完成了普通用户和系统管理员两者的功能分离，而且各自的功能操作都能得到正确数据并存入数据库中保存。另外系统利用MVC模式极大地提高了系统的灵活性、复用性、开发效率、适应性和可维护性。
->由于时间仓促，该系统存在一些不足之处，有待进一步改进和完善。
+# 5.Conclusion
+>In summary, this blog system consists of three main parts: reading blogs, back-end management, and system management. The back-end management includes article management, comment management, link management, image management, and password management. System management includes account management and password management. This system enables bloggers to better showcase themselves and communicate with each other.
+
+>Due to time constraints, there are some imperfections in the development of the system and the research of the paper. The study of design patterns was not long enough, so writing the code was not as proficient as it could have been, and some help documents were consulted in the process. In detailed design and coding, the most basic development technology was used, the code is simple and easy to understand, and the system's page jumping is relatively clear. The functions of ordinary users and system administrators are separated, and their respective functional operations can obtain the correct data and store it in the database. Additionally, the system utilizes the MVC pattern, which greatly improves the system's flexibility, reusability, development efficiency, adaptability, and maintainability.
+
+>Due to time constraints, there are some shortcomings in the system that need further improvement and refinement.
