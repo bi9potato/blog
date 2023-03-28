@@ -10,17 +10,17 @@ The administrator can maintain registered blog users through the front-end page 
 After logging in, the administrator can manage the account, including adding administrator accounts, modifying administrator accounts, deleting administrator accounts, and setting account permissions.
 Blog users can manage their own blog space after logging in to the front end, including publishing their own online diary, collecting personal pictures, communicating with relevant personnel, and deleting comments posted by visitors.
 In the specific design and implementation of the blog website, several main functions of mainstream blog websites were mainly considered:
->>(1) Blog registration and login verification function
->>(2) Keyword search function for blog posts by network users
->>(3) Recommendation of the most popular blog pages for browsing
->>(4) Display of detailed article content and related comments
->>(5) Statistics of blog page views
->>(6) Management and maintenance functions of personal blog articles
->>(7) Management and maintenance functions of personal blog article categories
->>(8) Management and maintenance functions of personal blog friendship links
->>(9) Management and maintenance functions of personal basic information in blogs
->>(10) Uploading pictures to the blog and managing personal albums
->>(11) Network users can leave messages and blog owners can view them.
+>>(1) Blog registration and login verification function  
+>>(2) Keyword search function for blog posts by network users  
+>>(3) Recommendation of the most popular blog pages for browsing  
+>>(4) Display of detailed article content and related comments  
+>>(5) Statistics of blog page views  
+>>(6) Management and maintenance functions of personal blog articles  
+>>(7) Management and maintenance functions of personal blog article categories  
+>>(8) Management and maintenance functions of personal blog friendship links  
+>>(9) Management and maintenance functions of personal basic information in blogs  
+>>(10) Uploading pictures to the blog and managing personal albums  
+>>(11) Network users can leave messages and blog owners can view them.  
 
 # 2.Overall Design Plan
 >(1) Building a blog requires two basic data types: user type and article type
