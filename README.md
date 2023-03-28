@@ -149,12 +149,12 @@ Login Verification:
         User user = userService.getUserByNameOrEmail(username);
         if(user==null) {
             map.put("code",0);
-            map.put("msg","用户名无效！");
+            map.put("msg","Invalid username!");
         } else if(!user.getUserPass().equals(password)) {
             map.put("code",0);
-            map.put("msg","密码错误！");
+            map.put("msg","Incorrect password!");
         } else {
-            //登录成功
+            //Login succeeded
             if(user.getUserAccess()==0){
                 map.put("code",1);
             }
@@ -162,13 +162,13 @@ Login Verification:
                 map.put("code",2);
             }
             map.put("msg","");
-            //添加session
+            //Add session
             request.getSession().setAttribute("user", user);
-            //添加cookie
+            //Add cookie
             if(rememberme!=null) {
-                //创建两个Cookie对象
+                //Create two Cookie objects
                 Cookie nameCookie = new Cookie("username", username);
-                //设置Cookie的有效期为3天
+                //Set the expiration time of the Cookie to 3 days
                 nameCookie.setMaxAge(60 * 60 * 24 * 3);
                 Cookie pwdCookie = new Cookie("password", password);
                 pwdCookie.setMaxAge(60 * 60 * 24 * 3);
@@ -183,6 +183,7 @@ Login Verification:
         String result = new JSONObject(map).toString();
         return result;
 }
+
 ```
 
 >This method checks if the user exists based on the username passed in. If the user exists, the login is successful.
@@ -194,23 +195,24 @@ Login Verification:
 
 In the AJAX section of the JSP page mentioned in section 2, we can see that after a successful login, different requests will be sent based on the code, which will result in different redirects.
 ```java
-    @RequestMapping("/admin")
-    //转到管理员后台主页
-    public String index(Model model){
-        List<Article> articleList=articleService.listRecentArticle(5);
-        model.addAttribute("articleList",articleList);
- 
-        List<Comment> commentList = commentService.listRecentComment(5);
-        model.addAttribute("commentList",commentList);
-        return "Admin/AdminIndex";
-    }
- 
-    //转到个人的后台页面
-    @RequestMapping("/genUser")
-    public String userIndex(Model model)
-    {
-        return "User/Article/insert";
-    }
+@RequestMapping("/admin")
+//Redirect to the main page of the admin backend
+public String index(Model model){
+    List<Article> articleList=articleService.listRecentArticle(5);
+    model.addAttribute("articleList",articleList);
+
+    List<Comment> commentList = commentService.listRecentComment(5);
+    model.addAttribute("commentList",commentList);
+    return "Admin/AdminIndex";
+}
+
+//Redirect to the personal backend page
+@RequestMapping("/genUser")
+public String userIndex(Model model)
+{
+    return "User/Article/insert";
+}
+
 ```
 >Since the two types of users have different permissions, their respective backend pages will also display differently. The main page of the admin backend will display the latest articles and comments (passed through the Model). The main page of the regular user backend will be for writing articles.
 
@@ -226,8 +228,8 @@ public class AdminArticleController {
     @Autowired
     private ArticleService articleService;
  
-    //后台文章列表显示（这个是管理员的页面，只是显示文章列表和进行删除）
-    //这个参数有分页操作必须有的PageIndex,pageSize，只有满足了这两个条件才能满足分页查询
+    // Display article list in the admin page with delete option.
+    // Pagination parameters: pageIndex and pageSize are required.
     @RequestMapping(value = "")
     public String index(@RequestParam(required = false,defaultValue = "1")Integer pageIndex,
                         @RequestParam(required = false,defaultValue = "10")Integer pageSize,
@@ -235,7 +237,7 @@ public class AdminArticleController {
         HashMap<String,Object> criteria=new HashMap<>(1);
         if(status==null)
         {
-           //会传递现在的页码（方便点击其他页码进行查询）
+            // Pass current page index for clicking other pages.
             model.addAttribute("pageUrlPrefix","/admin/article?pageIndex");
         }
         else
@@ -249,6 +251,7 @@ public class AdminArticleController {
     }
 ...
 }
+
 ```
 
 To see how pagination works, let's look at the implementation of the "pageArticle" method:
@@ -298,7 +301,7 @@ function deleteArticle(id) {
 As we can see, the article ID is passed during transmission, and the delete method in the controller layer looks like this:
 
 ```java
-    //删除文章
+    //delete article
     @RequestMapping(value = "/delete/{id}")
     public void deleteArticle(@PathVariable("id")Integer id){
         articleService.deleteArticle(id);
